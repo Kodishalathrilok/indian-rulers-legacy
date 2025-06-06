@@ -2,13 +2,9 @@
 import Hero3DModel from "./Hero3DModel";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
-  const handleExploreClick = () => {
-    console.log("Explore button clicked");
-    // Future implementation: scroll to timeline or navigate to explore page
-  };
-
   return (
     <section className="min-h-screen relative overflow-hidden bg-gradient-to-br from-heritage-cream via-background to-heritage-cream/50">
       {/* Background pattern */}
@@ -39,12 +35,11 @@ const HeroSection = () => {
         
         {/* Explore Button */}
         <div className="animate-scale-in">
-          <Button 
-            onClick={handleExploreClick}
-            className="heritage-button text-lg px-10 py-4 rounded-full"
-          >
-            Explore
-            <ArrowDown className="ml-2 h-5 w-5" />
+          <Button asChild className="heritage-button text-lg px-10 py-4 rounded-full">
+            <Link to="/timeline">
+              Explore
+              <ArrowDown className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
         
