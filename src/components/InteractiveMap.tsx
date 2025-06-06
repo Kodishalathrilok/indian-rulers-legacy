@@ -80,14 +80,18 @@ const InteractiveMap = () => {
         {/* Map Section */}
         <div className="lg:col-span-2">
           <Card className="p-6 bg-card/80 backdrop-blur-sm border-heritage-gold/20">
-            <div className="relative w-full h-96 md:h-[500px] bg-gradient-to-br from-heritage-cream/50 to-heritage-gold/20 rounded-lg overflow-hidden border-2 border-heritage-gold/30">
-              {/* Map Background with better visibility */}
-              <div className="absolute inset-0 bg-gradient-to-br from-heritage-cream/80 to-heritage-gold/30"></div>
+            <div className="relative w-full h-96 md:h-[500px] bg-gradient-to-br from-heritage-cream to-heritage-gold/10 rounded-lg overflow-hidden border-4 border-heritage-gold/50 shadow-lg">
+              {/* Map Background with high contrast */}
+              <div className="absolute inset-0 bg-heritage-cream/90"></div>
               
-              {/* India Outline with more prominent styling */}
-              <div className="absolute inset-4 border-4 border-heritage-gold/60 rounded-2xl bg-heritage-cream/40 shadow-inner">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-heritage-maroon/70 text-lg font-semibold font-playfair">
-                  Indian Subcontinent
+              {/* India Outline - Much more visible */}
+              <div className="absolute inset-6 border-8 border-heritage-maroon/80 rounded-3xl bg-heritage-gold/20 shadow-2xl">
+                {/* Inner border for extra definition */}
+                <div className="absolute inset-2 border-4 border-heritage-gold/60 rounded-2xl bg-heritage-cream/30">
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-heritage-maroon text-xl font-bold font-playfair text-center">
+                    <div>INDIAN</div>
+                    <div>SUBCONTINENT</div>
+                  </div>
                 </div>
               </div>
 
