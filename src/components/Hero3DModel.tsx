@@ -1,5 +1,6 @@
 
 import { useEffect, useRef } from "react";
+import { Crown } from "lucide-react";
 
 const Hero3DModel = () => {
   const modelRef = useRef<HTMLDivElement>(null);
