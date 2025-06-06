@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,20 +38,20 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Heritage colors inspired by Indian culture */
+    --heritage-gold: 45 85% 65%;
+    --heritage-saffron: 25 90% 60%;
+    --heritage-maroon: 10 45% 25%;
+    --heritage-cream: 45 25% 95%;
+    --heritage-bronze: 30 40% 35%;
   }
 
   .dark {
@@ -89,6 +90,13 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Dark mode heritage colors */
+    --heritage-gold: 45 75% 55%;
+    --heritage-saffron: 25 80% 50%;
+    --heritage-maroon: 10 55% 35%;
+    --heritage-cream: 45 15% 85%;
+    --heritage-bronze: 30 50% 45%;
   }
 }
 
@@ -98,6 +106,24 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .heritage-text-gradient {
+    @apply bg-gradient-to-r from-heritage-gold via-heritage-saffron to-heritage-bronze bg-clip-text text-transparent;
+  }
+  
+  .heritage-button {
+    @apply relative overflow-hidden bg-heritage-gold hover:bg-heritage-saffron text-heritage-maroon font-medium px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+  
+  .nav-link {
+    @apply relative text-foreground hover:text-heritage-gold transition-colors duration-300 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-heritage-gold after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 }
