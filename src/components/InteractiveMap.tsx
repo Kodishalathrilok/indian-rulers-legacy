@@ -80,33 +80,33 @@ const InteractiveMap = () => {
         {/* Map Section */}
         <div className="lg:col-span-2">
           <Card className="p-6 bg-card/80 backdrop-blur-sm border-heritage-gold/20">
-            <div className="relative w-full h-96 md:h-[500px] bg-gradient-to-br from-heritage-cream/30 to-heritage-gold/10 rounded-lg overflow-hidden">
-              {/* Map Background */}
-              <div className="absolute inset-0 bg-subtle-pattern opacity-20"></div>
+            <div className="relative w-full h-96 md:h-[500px] bg-gradient-to-br from-heritage-cream/50 to-heritage-gold/20 rounded-lg overflow-hidden border-2 border-heritage-gold/30">
+              {/* Map Background with better visibility */}
+              <div className="absolute inset-0 bg-gradient-to-br from-heritage-cream/80 to-heritage-gold/30"></div>
               
-              {/* India Outline Placeholder */}
-              <div className="absolute inset-4 border-2 border-heritage-gold/30 rounded-lg bg-heritage-cream/20">
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-heritage-gold/50 text-sm font-medium">
+              {/* India Outline with more prominent styling */}
+              <div className="absolute inset-4 border-4 border-heritage-gold/60 rounded-2xl bg-heritage-cream/40 shadow-inner">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-heritage-maroon/70 text-lg font-semibold font-playfair">
                   Indian Subcontinent
                 </div>
               </div>
 
-              {/* Kingdom Markers */}
+              {/* Kingdom Markers with enhanced visibility */}
               {kingdoms.map((kingdom) => (
                 <button
                   key={kingdom.id}
                   onClick={() => setSelectedKingdom(kingdom)}
-                  className={`absolute transform -translate-x-1/2 -translate-y-1/2 p-2 rounded-full border-2 transition-all duration-300 hover:scale-110 ${
+                  className={`absolute transform -translate-x-1/2 -translate-y-1/2 p-3 rounded-full border-3 transition-all duration-300 hover:scale-125 shadow-lg ${
                     selectedKingdom?.id === kingdom.id
-                      ? `bg-heritage-${kingdom.color} border-heritage-${kingdom.color} text-heritage-maroon`
-                      : `bg-heritage-${kingdom.color}/20 border-heritage-${kingdom.color} text-heritage-${kingdom.color} hover:bg-heritage-${kingdom.color}/40`
+                      ? `bg-heritage-${kingdom.color} border-heritage-maroon text-heritage-maroon shadow-xl scale-110`
+                      : `bg-white border-heritage-${kingdom.color} text-heritage-${kingdom.color} hover:bg-heritage-${kingdom.color}/20 hover:shadow-xl`
                   }`}
                   style={{
                     left: `${kingdom.x}%`,
                     top: `${kingdom.y}%`
                   }}
                 >
-                  <Crown className="h-4 w-4" />
+                  <Crown className="h-5 w-5" />
                 </button>
               ))}
             </div>
@@ -159,15 +159,15 @@ const InteractiveMap = () => {
             <h4 className="font-playfair font-semibold mb-3">Legend</h4>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-heritage-gold rounded-full"></div>
+                <div className="w-4 h-4 bg-heritage-gold rounded-full border-2 border-heritage-maroon"></div>
                 <span>Ancient Period</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-heritage-saffron rounded-full"></div>
+                <div className="w-4 h-4 bg-heritage-saffron rounded-full border-2 border-heritage-maroon"></div>
                 <span>Medieval Period</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-heritage-bronze rounded-full"></div>
+                <div className="w-4 h-4 bg-heritage-bronze rounded-full border-2 border-heritage-maroon"></div>
                 <span>Modern Period</span>
               </div>
             </div>
